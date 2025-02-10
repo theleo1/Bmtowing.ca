@@ -1,0 +1,130 @@
+.email-form-container {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 80%;  /* Réduire la largeur par rapport à l'écran */
+  max-width: 400px; /* Réduire la largeur maximale du formulaire */
+  background: linear-gradient(145deg, #ffffff, #f0f0f0);
+  border-radius: 15px;
+  box-shadow: 0px 10px 15px rgba(0, 0, 0, 0.027), -5px -5px 15px rgba(255, 255, 255, 0.8);
+  overflow: hidden;
+  z-index: 1000;
+  animation: fadeIn 0.5s ease-in-out;
+  padding: 1rem; /* Réduire le padding interne */
+}
+
+.email-form-header {
+  position: relative;
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  padding: 0.5rem; /* Réduire le padding */
+  background: #333;
+  border-top-left-radius: 15px;
+  border-top-right-radius: 15px;
+}
+
+.close-icon {
+  font-size: 1.3rem; /* Réduire la taille de l'icône de fermeture */
+  color: #ff6600 !important;
+  cursor: pointer;
+  transition: transform 0.3s ease, color 0.3s ease;
+}
+
+.close-icon:hover {
+  color: #ff4757 !important;
+  transform: scale(1.2);
+}
+
+.email-form {
+  padding: 1rem; /* Réduire le padding interne du formulaire */
+  font-family: 'Arial', sans-serif;
+}
+
+.email-form h3 {
+  text-align: center;
+  font-size: 1.5rem;  /* Réduire la taille de la police du titre */
+  color: #ff6600 !important;
+  margin-bottom: 15px; /* Réduire l'espace sous le titre */
+}
+
+.email-form label {
+  display: block;
+  font-size: 0.9rem;
+  color: #555;
+  margin-bottom: 5px;
+  text-align: left;
+}
+
+.email-form input,
+.email-form textarea {
+  width: 100%;
+  padding: 10px;  /* Réduire le padding des champs de saisie */
+  margin-bottom: 10px; /* Réduire l'espace entre les champs */
+  font-size: 0.9rem;  /* Réduire la taille de la police des champs */
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  box-shadow: inset 0px 4px 6px rgba(0, 0, 0, 0.05);
+  transition: all 0.3s ease;
+}
+
+.email-form input:focus,
+.email-form textarea:focus {
+  border-color: #333;
+  outline: none;
+  box-shadow: inset 0px 4px 6px rgba(2, 2, 2, 0.2);
+}
+
+.email-form textarea {
+  resize: none;
+}
+
+.submit-button {
+  display: block;
+  width: 100%;
+  padding: 10px 18px;  /* Réduire le padding du bouton */
+  font-size: 1.1rem;  /* Réduire la taille de la police du bouton */
+  font-weight: bold;
+  color: #fff;
+  background: linear-gradient(90deg, hsl(17, 100%, 51%), #ff6600);
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  box-shadow: 0px 6px 12px rgba(0, 123, 255, 0.3);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.submit-button:hover {
+  transform: translateY(-2px);
+  box-shadow: 0px 10px 20px rgba(235, 96, 4, 0.5);
+}
+
+/* Animation */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translate(-50%, -60%);
+  }
+  to {
+    opacity: 1;
+    transform: translate(-50%, -50%);
+  }
+}
+
+/* Styles pour le message de succès / erreur */
+.message {
+  text-align: center;
+  margin-top: 15px;  /* Réduire l'espace au-dessus du message */
+  padding: 8px;  /* Réduire le padding du message */
+  border-radius: 5px;
+  font-weight: bold;
+}
+
+.success {
+  color: #28a745;
+}
+
+.error {
+  color: #dc3545;
+}

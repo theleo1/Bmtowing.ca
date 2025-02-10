@@ -1,0 +1,113 @@
+/* Section Testimonials */
+.testimonials {
+  text-align: center;
+  padding: 10px 20px;
+  background: #f5f5f5;
+}
+
+.testimonials h2 {
+  font-size: 2.5rem;
+  margin-bottom: 30px;
+  color: #ffcc00;
+}
+
+/* Grid des témoignages */
+.testimonials-grid {
+  display: flex;
+  gap: 20px;
+  justify-content: center;
+  flex-wrap: wrap;
+  margin-top: 20px;
+}
+
+/* Élément individuel du témoignage */
+.testimonial-item {
+  background: #fff;
+  border-radius: 10px;
+  padding: 20px;
+  max-width: 300px;
+  text-align: center;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  margin-bottom: 20px;
+}
+
+.testimonial-item:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 8px 12px rgba(0, 0, 0, 0.2);
+}
+
+/* Icône de citation */
+.quote-icon {
+  font-size: 2rem;
+  color: #ff5722;
+}
+
+/* Infos du client */
+.customer-info {
+  margin-top: 15px;
+}
+
+.icon-container {
+  display: inline-block;
+  border-radius: 50%;
+  width: 60px;
+  height: 60px;
+  margin-bottom: 10px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #ffcc00;
+  color: #fff;
+}
+
+.customer-info span {
+  display: block;
+  margin-top: 5px;
+  font-weight: bold;
+  color: #333;
+}
+
+/* Media Queries pour rendre les témoignages responsives */
+
+/* Pour les écrans de tablette */
+@media (max-width: 768px) {
+  .testimonials h2 {
+    font-size: 2rem; /* Taille du titre réduite pour les tablettes */
+  }
+
+  .testimonial-item {
+    max-width: 100%; /* Élargir les items pour occuper toute la largeur disponible */
+    padding: 15px; /* Réduire l'espacement intérieur */
+  }
+
+  .testimonials-grid {
+    flex-direction: column; /* Afficher les témoignages en colonne sur les écrans plus petits */
+    align-items: center; /* Assure une bonne alignement */
+  }
+}
+
+/* Pour les écrans de mobile */
+@media (max-width: 480px) {
+  .testimonials h2 {
+    font-size: 1.8rem; /* Titre encore plus petit pour les mobiles */
+  }
+
+  .testimonial-item {
+    padding: 12px; /* Réduction de l'espacement intérieur */
+    max-width: 100%; /* Les items occuperont toute la largeur */
+  }
+
+  .quote-icon {
+    font-size: 1.5rem; /* Icône plus petite sur mobile */
+  }
+
+  .icon-container {
+    width: 50px; /* Réduire la taille du cercle de l'icône */
+    height: 50px; /* Réduire la taille du cercle de l'icône */
+  }
+
+  .customer-info span {
+    font-size: 0.9rem; /* Réduire la taille du texte */
+  }
+}

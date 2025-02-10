@@ -1,17 +1,25 @@
 import React from 'react';
-import ReactDOM from 'react-dom/client';
-import './index.css';
-import App from './App';
-import reportWebVitals from './reportWebVitals';
+import ReactDOM from 'react-dom/client'; // Importation pour React 18+
+import './App.css'; // Import des styles globaux
+import App from './App'; // Import du composant principal de l'application
+import { BrowserRouter as Router } from 'react-router-dom'; // Import du routeur
 
-const root = ReactDOM.createRoot(document.getElementById('root'));
-root.render(
-  <React.StrictMode>
-    <App />
-  </React.StrictMode>
-);
+// Sélectionner l'élément racine du DOM
+const rootElement = document.getElementById('root');
 
-// If you want to start measuring performance in your app, pass a function
-// to log results (for example: reportWebVitals(console.log))
-// or send to an analytics endpoint. Learn more: https://bit.ly/CRA-vitals
-reportWebVitals();
+// Vérifier si l'élément existe
+if (rootElement) {
+  // Créer une racine React à partir de l'élément sélectionné
+  const root = ReactDOM.createRoot(rootElement);
+
+  // Rendre l'application React dans le DOM
+  root.render(
+    <React.StrictMode>
+      <Router>
+        <App />
+      </Router>
+    </React.StrictMode>
+  );
+} else {
+  console.error("L'élément avec l'ID 'root' n'a pas été trouvé dans le DOM.");
+}

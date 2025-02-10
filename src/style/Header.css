@@ -1,0 +1,523 @@
+/* Style global pour le Header */
+
+*{
+font-family: "Poppins", sans-serif;
+}
+
+header {
+  background-color: #333;
+  position: relative;
+  z-index: 10;
+  cursor: pointer;
+}
+
+/* Navbar */
+nav {
+  display: flex;
+  justify-content: center; /* Centrer le contenu horizontalement */
+  align-items: center;
+  background-color: transparent; /* Transparent par défaut */
+  color: #fff;
+  transition: background-color 0.3s ease, box-shadow 0.3s ease; /* Transition pour défilement */
+  padding: 10px 20px; /* Espacement à gauche et à droite pour éviter que le contenu touche les bords */
+  max-width: 1200px; /* Largeur maximale de la navbar */
+  width: 100%; /* Prenez toute la largeur disponible, mais limité à max-width */
+  margin: 0 auto; /* Centrer la navbar */
+  position: relative; /* Pour assurer que les éléments sont bien placés */
+}
+
+/* Lorsque la page est scrollée */
+nav.scrolled {
+  background-color: #333; /* Couleur lors du défilement */
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+/* Conteneur du logo et du slogan */
+nav .logo-container {
+  display: flex;
+  flex-direction: column; /* Logo et slogan en colonne */
+  align-items: center;
+  margin-right: 60px; /* Augmentation de l'espacement à 60px entre le logo et les éléments de la nav */
+}
+
+/* Taille du logo */
+nav .logo {
+  width: 80px; /* Taille du logo */
+  height: auto;
+  transition: transform 0.5s ease; /* Animation du logo */
+}
+
+/* Effet au survol du logo */
+nav .logo-container:hover .logo {
+  transform: scale(1.2); /* Zoom au survol */
+}
+
+/* Style du slogan */
+nav .slogan {
+    font-size: 25px !important;
+    font-family: 'Aldhabi', sans-serif;
+    font-weight: bold;
+    color: #ff6600;
+    text-align: center;
+    margin-top: -20px;
+    animation: fadeIn 1s ease-in-out;
+}
+
+/* Animation pour le slogan */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(15px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(10px);
+  }
+}
+
+/* Navigation Links */
+nav .nav-links {
+  display: flex;
+  list-style: none;
+  gap: 30px; /* Espacement entre les liens */
+  cursor: pointer;
+  align-items: center;
+  margin: 0;
+  padding: 0;
+  justify-content: center; /* Centrer horizontalement les liens */
+}
+
+/* Style des liens de navigation */
+nav .nav-links li a {
+  color: white;
+  text-decoration: none;
+  font-weight: bold;
+  font-size: 14px;
+  transition: color 0.3s ease;
+}
+
+/* Effet au survol des liens */
+nav .nav-links li a:hover {
+  color: #ff6600;
+}
+
+/* Dropdown styles */
+nav .dropdown {
+  position: relative;
+  display: inline-block; /* S'assurer que le dropdown est au même niveau que les autres éléments */
+}
+
+nav .dropdown-button {
+  background: none;
+  border: none;
+  font-family: "Poppins", sans-serif;
+  font-size: 15px;
+  font-weight: bold;
+  cursor: pointer;
+  color: #ffffff;
+  padding: 0px 20px;
+  display: flex;
+  align-items: center;
+  height: 100%; /* S'assurer que le bouton prend toute la hauteur de son li */
+}
+
+/* Effet au survol du bouton "Our Services" */
+nav .dropdown-button:hover {
+  color: #ff6600;
+}
+
+/* Menu déroulant */
+nav .dropdown-menu {
+  display: none; /* Caché par défaut */
+  position: absolute;
+  top: 100%; /* Positionne le menu juste en dessous du bouton */
+  left: 0;
+  background-color: #333;
+  border-radius: 5px;
+  box-shadow: 0px 8px 16px rgba(51, 51, 51);
+  list-style: none;
+  padding: 24px 22px;
+  margin: 0;
+  min-width: 300px;
+  z-index: 1;
+  opacity: 0; /* Début avec transparence */
+}
+
+/* Afficher le dropdown au survol */
+nav .dropdown:hover .dropdown-menu {
+  display: block;
+  opacity: 1; /* Rendre visible lors du survol */
+}
+
+/* Style des éléments du menu déroulant */
+nav .dropdown-menu li {
+  padding: 6px 6px;
+  text-align: left;
+  transition: background-color 0.3s ease;
+}
+
+/* Style des liens dans le dropdown */
+nav .dropdown-menu li a {
+  color: white;
+  text-decoration: none;
+  display: block;
+  font-weight: bold;
+  padding: 2px 0;
+}
+
+/* Effet de survol sur les liens du dropdown */
+nav .dropdown-menu li a:hover {
+  color: #ff6600;
+}
+
+/* Bouton CTA */
+.cta-button-Appointment {
+  background-color: #ff6600;
+  padding: 5px 20px;
+  border-radius: 5px;
+  color: #333;
+  font-size: 14px;
+  font-weight: bold;
+  text-align: center;
+  transition: background-color 0.3s ease;
+}
+
+/* Effet au survol du bouton CTA */
+.cta-button-Appointment:hover {
+  background-color: #333;
+  color: #ff6600;
+}
+
+/* Hamburger Menu */
+nav .hamburger-icon {
+  display: none; /* Cacher par défaut */
+  background: none;
+  border: none;
+  color: #ff6600;
+  font-size: 24px;
+  cursor: pointer;
+}
+
+/* Media Queries */
+
+/* Mobile First - Affichage pour les petits écrans (≤ 480px) */
+@media screen and (max-width: 480px) {
+  nav .nav-links {
+    gap: 5px; /* Espacement plus réduit entre les liens */
+    flex-direction: column; /* Les éléments se superposent verticalement */
+    justify-content: center; /* Centrer les liens verticalement */
+    text-align: center; /* Centrer les liens horizontalement */
+  }
+
+  nav .nav-links li {
+    width: 100%; /* Les éléments de la liste prennent toute la largeur */
+  }
+
+  nav .nav-links li a {
+    font-size: 12px; /* Taille de police réduite */
+  }
+
+  .cta-button-Appointment {
+    padding: 5px 10px; /* Bouton plus compact */
+    font-size: 9px;
+  }
+
+  nav .logo {
+    width: 70px; /* Réduire la taille du logo */
+  }
+
+  nav .slogan {
+    font-size: 10px; /* Réduire la taille du slogan */
+    margin-top: -4px; /* Ajuster l'espacement */
+    text-align: center; /* Centrer le texte du slogan */
+  }
+
+  nav .hamburger-icon {
+    display: block; /* Afficher l'icône hamburger sur mobile */
+  }
+
+  nav .nav-links {
+    display: none; /* Cacher les liens par défaut */
+    flex-direction: column;
+    position: absolute;
+    top: 60px;
+    left: 0;
+    background: #333;
+    width: 100%;
+    padding: 15px;
+    border-radius: 5px;
+  }
+
+  nav .nav-links.show {
+    display: flex; /* Afficher les liens lorsque le hamburger est cliqué */
+  }
+
+  nav .dropdown-menu {
+    display: none; /* Masquer les dropdowns sur mobile */
+  }
+
+  nav .dropdown {
+    display: block; /* Forcer le dropdown à être visible sur les petits écrans */
+  }
+}
+
+/* Tablettes (481px à 768px) */
+@media screen and (min-width: 481px) and (max-width: 768px) {
+  nav .logo {
+    width: 80px; /* Taille du logo ajustée pour tablettes */
+  }
+
+  nav .nav-links {
+    gap: 20px;
+    flex-direction: row; /* Disposition horizontale des liens */
+    justify-content: center; /* Centrer les éléments horizontalement */
+  }
+
+  nav .nav-links li a {
+    font-size: 13px; /* Légèrement plus grand pour les tablettes */
+  }
+
+  .cta-button-Appointment {
+    padding: 6px 12px;
+    font-size: 10px;
+  }
+
+  nav .slogan {
+    font-size: 11px; /* Légèrement plus grand pour les tablettes */
+    margin-top: -3px; /* Ajuster l'espacement pour être cohérent */
+    text-align: center; /* Centrer le texte */
+  }
+
+  nav .hamburger-icon {
+    display: block; /* Afficher le hamburger */
+  }
+
+  nav .nav-links {
+    display: none;
+    position: absolute;
+    top: 60px;
+    left: 0;
+    background: #333;
+    width: 100%;
+    padding: 20px;
+    border-radius: 5px;
+  }
+
+  nav .nav-links.show {
+    display: flex;
+    flex-direction: column;
+    margin-top: 55px;
+  }
+
+  nav .dropdown-menu {
+    display: none; /* Masquer les dropdowns */
+  }
+
+  nav .dropdown {
+    display: block; /* Forcer le dropdown à être visible sur les petits écrans */
+  }
+}
+nav .dropdown-button {
+  background: none;
+  border: none;
+  font-family: "Poppins", sans-serif;
+  font-size: 13px;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+/* Tablettes et petits écrans larges (769px à 967px) */
+@media screen and (min-width: 769px) and (max-width: 967px) {
+  nav .logo {
+    width: 90px; /* Ajuster la taille du logo */
+  }
+
+  nav .nav-links {
+    gap: 20px;
+    flex-direction: row; /* Disposition horizontale des liens */
+    justify-content: center; /* Centrer les éléments horizontalement */
+  }
+
+  nav .nav-links li a {
+    font-size: 13px; /* Ajuster la taille des liens pour une lisibilité optimale */
+  }
+
+  .cta-button-Appointment {
+    padding: 6px 15px;
+    font-size: 13px;
+  }
+
+  nav .slogan {
+    font-size: 12px; /* Taille du slogan adaptée pour les tablettes */
+    margin-top: 0; /* Ajuster l'espacement */
+    text-align: center; /* Centrer le texte */
+  }
+
+  nav .dropdown {
+    display: inline-block; /* Ajuster la largeur du dropdown pour s'adapter à la taille de l'écran */
+  }
+}
+
+/* Écrans plus larges (968px à 1057px) */
+@media screen and (min-width: 968px) and (max-width: 1057px) {
+  nav .nav-links {
+    gap: 30px; /* Espacement plus important entre les liens */
+    flex-direction: row; /* Disposition horizontale des liens */
+    justify-content: center; /* Centrer les éléments horizontalement */
+  }
+
+  nav .logo {
+    width: 100px; /* Logo légèrement plus large */
+  }
+
+  nav .nav-links li a {
+    font-size: 14px; /* Taille plus grande pour une meilleure visibilité */
+  }
+
+  .cta-button-Appointment {
+    padding: 7px 20px;
+    font-size: 14px;
+  }
+
+  nav .slogan{
+    font-size: 13px; /* Taille du slogan pour les écrans moyens */
+    margin-top: 3px; /* Ajuster l'espacement */
+    text-align: center; /* Centrer le texte */
+  }
+}
+
+/* Grands écrans (≥ 1058px) */
+@media screen and (min-width: 1058px) {
+  nav .nav-links {
+    gap: 30px; /* Espacement optimisé */
+    flex-direction: row; /* Disposition horizontale des liens */
+    justify-content: center; /* Centrer les éléments horizontalement */
+  }
+
+  nav .logo {
+    width: 110px; /* Logo large pour les grands écrans */
+  }
+
+  nav .nav-links li a {
+    font-size: 14px; /* Plus grande taille de texte */
+  }
+
+  .cta-button-Appointment {
+    padding: 8px 25px;
+    font-size: 14px;
+  }
+
+  nav .slogan {
+    font-size: 14px; /* Taille de police du slogan ajustée pour les grands écrans */
+    text-align: center; /* Centrer le texte */
+  }
+}
+
+
+/*****************************************************/
+/*****************************************************/
+
+/* --- Style de base pour l'icône Home --- */
+.home-button {
+  background: none; /* Supprime le fond */
+  border: none; /* Supprime les bordures */
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0px;
+  border-radius: 50%;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.home-button svg {
+  color: #f0f0f0;
+  font-size: 24px;
+  transition: color 0.3s ease;
+}
+
+/* Effet au survol */
+.home-button:hover {
+  background-color:#333; /* Couleur de fond légère */
+  transform: scale(1.1); /* Agrandissement au survol */
+}
+
+.home-button:hover svg {
+  color:#ff6600; /* Changement de couleur de l'icône */
+}
+
+/* Focus pour accessibilité */
+.home-button:focus {
+  outline: 2px solid #ff6600;
+  outline-offset: 2px;
+}
+
+/* --- Navigation de base --- */
+.nav-links {
+  display: flex;
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.nav-links li {
+  margin: 0 10px;
+}
+
+.nav-links .home-button {
+  margin-right: 0px;
+}
+
+/* --- Style responsive pour le menu et l'icône --- */
+
+/* Affichage mobile (écran max 768px) */
+@media (max-width: 768px) {
+  /* Menu caché par défaut */
+  .nav-links {
+    display: none; /* Masque le menu par défaut */
+    flex-direction: column;
+    position: absolute;
+    top: 60px; /* Ajustez en fonction de la hauteur de votre header */
+    left: 0;
+    right: 0;
+    background-color: #fff;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    z-index: 100;
+  }
+
+  /* Affichage du menu lorsqu'il est ouvert */
+  .nav-links.show {
+    display: flex;
+  }
+
+  /* Style pour chaque lien */
+  .nav-links li {
+    margin: 10px 0;
+    text-align: center;
+  }
+
+  /* Icône Home centrée */
+  .home-button {
+    padding: 15px;
+    font-size: 20px;
+  }
+
+  .home-button svg {
+    font-size: 28px; /* Augmente la taille de l'icône pour les écrans mobiles */
+  }
+}
+
+/* Très petit écran (max 480px) */
+@media (max-width: 480px) {
+  .home-button {
+    padding: 12px;
+  }
+
+  .home-button svg {
+    font-size: 24px; /* Réduit légèrement pour les très petits écrans */
+  }
+
+  .nav-links {
+    font-size: 16px; /* Ajuste la taille des liens */
+  }
+}

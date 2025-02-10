@@ -1,0 +1,118 @@
+/* Section générale */
+.our-services {
+  text-align: center;
+  padding: 10px 20px;
+  background-color: #f9f9f9;
+}
+
+.our-services h2 {
+  font-size: 2.5rem;
+  color: #ffcc00;
+}
+
+.section-description {
+  font-size: 1rem;
+  margin: 20px auto;
+  max-width: 700px;
+  color: #666;
+}
+
+/* Grille de services */
+.service-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr); /* 3 colonnes par défaut */
+  gap: 20px;
+  margin-top: 40px;
+  justify-items: center; /* Centrer les éléments dans la grille */
+  max-width: 1000px; /* Largeur maximale de la grille */
+  margin: 0 auto; /* Centrer la grille horizontalement */
+  padding: 0 20px; /* Espacement à gauche et à droite */
+}
+
+/* Éléments de service */
+.service-item {
+  background: #fff;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  padding: 20px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease, box-shadow 0.3s ease, background-color 0.3s ease;
+  max-width: 300px; /* Limite la taille de chaque élément */
+  width: 100%; /* L'élément occupe toute la largeur de la cellule */
+}
+
+.service-item:hover {
+  transform: translateY(-10px) scale(1.05);
+  box-shadow: 0 8px 12px rgba(0, 0, 0, 0.2);
+  background-color: #fef3e7;
+}
+
+/* Icône des services */
+.service-iconO {
+  font-size: 3rem;
+  color: #ff5722;
+  margin-bottom: 15px;
+  transition: color 0.3s ease, transform 0.3s ease;
+}
+
+.service-item:hover .service-iconO {
+  color: #e64a19;
+  transform: rotate(10deg);
+}
+
+/* Titres et descriptions */
+.service-item h3 {
+  font-size: 1.25rem;
+  color: #333;
+  margin: 15px 0 10px;
+  transition: color 0.3s ease;
+}
+
+.service-item:hover h3 {
+  color: #ff5722;
+}
+
+.service-item p {
+  font-size: 0.9rem;
+  color: #666;
+  transition: color 0.3s ease;
+}
+
+.service-item:hover p {
+  color: #333;
+}
+
+/* Bouton CTA */
+.explore-button {
+  background-color: #ff5722;
+  color: #fff;
+  padding: 12px 20px;
+  font-size: 1rem;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.explore-button:hover {
+  background-color: #e64a19;
+}
+
+/* Styles responsives */
+@media screen and (max-width: 1024px) {
+  .service-grid {
+      grid-template-columns: repeat(3, 1fr); /* 3 colonnes pour les écrans moyens */
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .service-grid {
+      grid-template-columns: repeat(2, 1fr); /* 2 colonnes pour les tablettes */
+  }
+}
+
+@media screen and (max-width: 480px) {
+  .service-grid {
+      grid-template-columns: 1fr; /* 1 colonne pour les petits écrans (smartphones) */
+  }
+}

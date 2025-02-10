@@ -1,0 +1,100 @@
+/* TowingService Section - Isolation des styles */
+.towing-service-container {
+  padding: 40px 20px;
+  max-width: 1200px;
+  margin: 0 auto;
+  font-family: 'Roboto', sans-serif;
+  background-color: #f0f4f8;
+  border-radius: 10px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+.towing-service-title {
+  text-align: center;
+  font-size: 3rem;
+  color: #FF6600;
+  margin-bottom: 30px;
+  position: relative;
+}
+
+.towing-service-text {
+  font-size: 1.2rem;
+  line-height: 1.8;
+  color: #7f8c8d;
+  margin-bottom: 30px;
+  text-align: center;
+}
+
+/* Grid des services - Ajout d'une classe spécifique */
+.towing-service-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 20px;
+}
+
+.towing-service-detail {
+  background: #ffffff;
+  padding: 20px;
+  border-radius: 10px;
+  text-align: center;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+}
+
+.towing-service-detail:hover {
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+}
+
+.towing-service-detail h2 {
+  font-size: 1.5rem;
+  color: #2980b9;
+  margin-bottom: 10px;
+}
+
+.towing-service-detail p {
+  font-size: 1rem;
+  color: #7f8c8d;
+}
+
+.towing-service-icon {
+  font-size: 2.5rem;
+  color: #2980b9;
+  margin-bottom: 15px;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .towing-service-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .towing-service-title {
+    font-size: 2.5rem;
+  }
+
+  .towing-service-detail h2 {
+    font-size: 1.4rem;
+  }
+
+  .towing-service-text {
+    font-size: 1rem;
+  }
+
+  .towing-service-icon {
+    font-size: 2rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .towing-service-title {
+    font-size: 2rem;
+  }
+
+  .towing-service-detail h2 {
+    font-size: 1.3rem;
+  }
+
+  .towing-service-detail p {
+    font-size: 0.9rem;
+  }
+}
